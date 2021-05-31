@@ -12,24 +12,14 @@ governing permissions and limitations under the License.
 const core = require('@actions/core')
 const exec = require('@actions/exec')
 
+console.log('Trying to execute simple GH action')
+
 //get the command from user
 const command = core.getInput('command')
-if(!command || command === '')
-  throw new Error("No aio command specified")
 
 const os = core.getInput('os');
 
 let commandStr = []
-// if(command.toLowerCase() === 'build') {
-//   commandStr.push("aio app deploy --skip-deploy")
-// }
-// else if(command.toLowerCase() === 'deploy') {
-//   commandStr.push("aio app deploy --skip-build")
-// }
-// else if(command.toLowerCase() === 'test') {
-//   commandStr.push("npm install -g jest")
-//   commandStr.push("jest --passWithNoTests ./test")
-// }
 
 try {
   console.log(`Executing command ${command}!`)
@@ -40,23 +30,6 @@ try {
     console.log('error exporting variable ' + e.message)
   }
   console.log(`env variable TEST_ENV_VAR set`)
-  // runCLICommand(os, commandStr)
-  // .then(() => {
-  //   console.log("action completed")
-  // })
-  // .catch(e => {
-  //   core.setFailed(e.message);
-  // })
 } catch (error) {
   core.setFailed(error.message);
 }
-
-// async function runCLICommand(os, commandStr) {
-//   let cmd
-//   for(let i = 0; i < commandStr.length; i++) {
-//     cmd = commandStr[i]
-//     if(os && os.startsWith("ubuntu"))
-//       cmd = 'sudo --preserve-env ' + cmd
-//       await exec.exec(cmd)
-//   }
-// }
