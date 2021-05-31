@@ -35,10 +35,10 @@ try {
   console.log(`Executing command ${command}!`)
   try {
     console.log('Trying to set env var')
-  core.exportVariable('TEST_ENV_VAR', 'success')
-} catch(e) {
-  console.log('error exporting variable ' + e.message)
-}
+    core.exportVariable('TEST_ENV_VAR', 'success')
+  } catch(e) {
+    console.log('error exporting variable ' + e.message)
+  }
   console.log(`env variable TEST_ENV_VAR set`)
   // runCLICommand(os, commandStr)
   // .then(() => {
