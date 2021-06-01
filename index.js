@@ -20,17 +20,17 @@ const command = core.getInput('command')
 
 const os = core.getInput('os')
 
-const key = core.getInput('key')
+const key = core.getInput('KEY')
 
-const scopes = core.getInput('scopes')
+const scopes = core.getInput('SCOPES')
 
-const clientId = core.getInput('clientId')
+const clientId = core.getInput('CLIENTID')
 
-const clientSecret = core.getInput('clientSecret')
+const clientSecret = core.getInput('CLIENTSECRET')
 
-const techAccId = core.getInput('technicalAccId')
+const techAccId = core.getInput('TECHNICALACCID')
 
-const imsOrgId = core.getInput('imsOrgId')
+const imsOrgId = core.getInput('IMSORGID')
 
 let commandStr = []
 
