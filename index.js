@@ -46,7 +46,6 @@ else if(command.toLowerCase() === 'test') {
   commandStr.push("npm install -g jest")
   commandStr.push("aio app test")
 }
-//test
 
 try {
   console.log(`Executing command ${command}!`)
